@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
 import ServiceOrderItem from '../ServiceOrderItem/ServiceOrderItem';
 import SearchAppBar from '../search-bar/SearchBar';
-import './serviceOrders.css';
+import './ServiceOrders.css';
 
 function ServiceOrders() {
     const navigate = useNavigate();
