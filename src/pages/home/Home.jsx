@@ -1,4 +1,3 @@
-
 import { Typography, Grid } from '@mui/material';
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; // Importa o useNavigate
@@ -11,6 +10,7 @@ function Home() {
   const [loading, setLoading] = useState(true);
   const [serviceProviders, setServiceProviders] = useState({});
   const [searchResults, setSearchResults] = useState([]);
+  const [error, setError] = useState(null); // Novo estado para armazenar erros
   const navigate = useNavigate(); // Para navegação
 
   async function fetchOfferedService() {
@@ -34,6 +34,7 @@ function Home() {
       setServiceProviders(providerMap); // Armazena os dados dos prestadores por ID
     } catch (error) {
       console.error('Erro ao buscar dados do prestador de serviço:', error);
+      setError('Erro nas requisições (front on)'); // Define a mensagem de erro
     } finally {
       setLoading(false);
     }
@@ -54,6 +55,10 @@ function Home() {
 
   if (loading) {
     return <Typography>Carregando...</Typography>;
+  }
+
+  if (error) {
+    return <Typography>{error}</Typography>; // Exibe a mensagem de erro, se houver
   }
 
   return (
