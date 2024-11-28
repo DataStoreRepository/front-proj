@@ -67,14 +67,14 @@ const OfferedServiceForm = ({ providerId, onClose, serviceToEdit }) => {
             let response;
             if (serviceToEdit) { // Modo de edição
                 response = await sendImageBlob(
-                    `http://localhost:8080/offered-service/${serviceToEdit.id}`, // Endpoint para editar, incluindo o ID do serviço
+                    `https://back-proj-j660.onrender.com/offered-service/${serviceToEdit.id}`, // Endpoint para editar, incluindo o ID do serviço
                     'PUT', // Método PUT para editar
                     formData,
                     token
                 );
             } else { // Modo de criação
                 response = await sendImageBlob(
-                    'http://localhost:8080/offered-service',
+                    'https://back-proj-j660.onrender.com/offered-service',
                     'POST',
                     formData,
                     token

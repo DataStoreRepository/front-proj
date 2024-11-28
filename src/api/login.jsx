@@ -1,6 +1,6 @@
 //login
 export default async function loginUser(endpoint, method = 'GET', body = null) {
-  const url = `http://localhost:8080/${endpoint}`;
+  const url = `https://back-proj-j660.onrender.com/${endpoint}`;
   const options = {
     method: method,
     headers: {
@@ -14,7 +14,7 @@ export default async function loginUser(endpoint, method = 'GET', body = null) {
 
   try {
     const response = await fetch(url, options);
-    
+
     // Verifica se a resposta é bem-sucedida
     if (!response.ok) {
       console.log("erro")
@@ -37,7 +37,7 @@ export default async function loginUser(endpoint, method = 'GET', body = null) {
     return null; // Retorna null caso ocorra um erro
   }
 }
-  
+
 
 
 //   const response = await makeRequest(`service-provider/${id}`, 'PUT', updatedServiceProvider);

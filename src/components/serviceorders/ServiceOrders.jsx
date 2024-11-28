@@ -18,7 +18,7 @@ function ServiceOrders() {
                 const decodedToken = jwtDecode(token);
                 const providerId = decodedToken.userId; // Obtém o ID do provedor do token
 
-                const response = await fetch(`http://localhost:8080/service-order/provider/${providerId}`, {
+                const response = await fetch(`https://back-proj-j660.onrender.com/service-order/provider/${providerId}`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -44,7 +44,7 @@ function ServiceOrders() {
     // Função para lidar com a mudança de status da ordem de serviço
     const handleStatusChange = async (orderId, newStatus) => {
         try {
-            await fetch(`http://localhost:8080/service-order/${orderId}/status`, {
+            await fetch(`https://back-proj-j660.onrender.com/service-order/${orderId}/status`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -74,7 +74,7 @@ function ServiceOrders() {
     return (
 
         <div>
-            
+
             <SearchAppBar onSearch={handleSearch} />
             <div className="service-orders-container">
 

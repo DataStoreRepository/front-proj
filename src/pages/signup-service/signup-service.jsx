@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {jwtDecode} from 'jwt-decode';
+import { jwtDecode } from 'jwt-decode';
 import './signup-service.css';
 import FormBox from '../../components/form-box/FormBox';
 import FormContainer from '../../components/form-container/FormContainer';
@@ -33,7 +33,7 @@ const SignUpService = () => {
         const loggedInUsername = decoded.sub;
 
         const response = await fetch(
-          `http://localhost:8080/user/by-email?email=${loggedInUsername}`,
+          `https://back-proj-j660.onrender.com/user/by-email?email=${loggedInUsername}`,
           {
             method: 'GET',
             headers: {
@@ -86,7 +86,7 @@ const SignUpService = () => {
     formData.append('imageFile', imageFile);
 
     try {
-      const response = await sendImageBlob('http://localhost:8080/service-provider', 'POST', formData, token);
+      const response = await sendImageBlob('https://back-proj-j660.onrender.com/service-provider', 'POST', formData, token);
 
       if (response) {
         toast.success('Prestador de serviço cadastrado com sucesso!');
@@ -98,7 +98,7 @@ const SignUpService = () => {
         });
         setImageFile(null);
         setTimeout(() => {
-          window.location.href = '/'; 
+          window.location.href = '/';
         }, 1000);
       }
     } catch (error) {

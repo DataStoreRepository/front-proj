@@ -8,7 +8,7 @@ export const AuthProvider = ({ children }) => {
   // Função para buscar detalhes do usuário
   const fetchUserDetails = async (email, token) => {
     try {
-      const response = await fetch(`http://localhost:8080/user/by-email?email=${email}`, {
+      const response = await fetch(`https://back-proj-j660.onrender.com/user/by-email?email=${email}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

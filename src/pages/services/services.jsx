@@ -66,7 +66,7 @@ function ServiceDetails() {
         status: 'PENDING',
       };
 
-      await axios.post('http://localhost:8080/service-order', serviceOrderDTO, {
+      await axios.post('https://back-proj-j660.onrender.com/service-order', serviceOrderDTO, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -98,7 +98,7 @@ function ServiceDetails() {
     <Container>
       <StyledCard>
         <AvatarContainer>
-          <Avatar 
+          <Avatar
             sx={{ width: 80, height: 80 }}
             src={serviceProvider.image ? `data:image/jpeg;base64,${serviceProvider.image}` : '/default-avatar.png'}
             alt={serviceProvider.name}

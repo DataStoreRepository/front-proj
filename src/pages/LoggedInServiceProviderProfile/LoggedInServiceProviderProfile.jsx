@@ -57,7 +57,7 @@ function LoggedInServiceProviderProfile() {
         const fetchProviderData = async () => {
             try {
                 const response = await fetch(
-                    `http://localhost:8080/service-provider/user/${loggedInUserId}`, // Endpoint para buscar o prestador pelo ID do usuário
+                    `https://back-proj-j660.onrender.com/service-provider/user/${loggedInUserId}`, // Endpoint para buscar o prestador pelo ID do usuário
                     {
                         method: 'GET',
                         headers: {

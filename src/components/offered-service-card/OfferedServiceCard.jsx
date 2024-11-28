@@ -21,7 +21,7 @@ function OfferedServiceCard({ service, isServiceProvider, onEdit }) {
                 status: 'PENDING',
             };
 
-            await axios.post('http://localhost:8080/service-order', serviceOrderDTO, {
+            await axios.post('https://back-proj-j660.onrender.com/service-order', serviceOrderDTO, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -42,7 +42,7 @@ function OfferedServiceCard({ service, isServiceProvider, onEdit }) {
         if (window.confirm('Tem certeza que deseja excluir este serviço?')) {
             try {
                 const token = localStorage.getItem('token');
-                await axios.delete(`http://localhost:8080/offered-service/${service.id}`, {
+                await axios.delete(`https://back-proj-j660.onrender.com/offered-service/${service.id}`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },

@@ -1,6 +1,6 @@
 //login
 export default async function getDataFunction(endpoint, method = 'GET', body = null) {
-    const url = `http://localhost:8080/${endpoint}`;
+    const url = `https://back-proj-j660.onrender.com/${endpoint}`;
     const options = {
       method: method,
       headers: {
