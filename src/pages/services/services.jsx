@@ -66,7 +66,7 @@ function ServiceDetails() {
         status: 'PENDING',
       };
 
-      await axios.post('https://back-proj-j660.onrender.com/service-order', serviceOrderDTO, {
+      await axios.post('https://back-proj-j660.onrender.com/core/service-order', serviceOrderDTO, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

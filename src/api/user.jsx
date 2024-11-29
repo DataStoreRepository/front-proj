@@ -1,5 +1,5 @@
 export default async function userAPI(endpoint, method = 'GET', body = null) {
-  const url = `https://back-proj-j660.onrender.com/${endpoint}`;
+  const url = `https://back-proj-j660.onrender.com/core/${endpoint}`;
   const options = {
     method: method,
     headers: {

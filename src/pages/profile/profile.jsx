@@ -42,7 +42,7 @@ const Profile = () => {
     const fetchUserInfo = async () => {
       try {
         const response = await fetch(
-          `https://back-proj-j660.onrender.com/user/by-email?email=${loggedInUsername}`,
+          `https://back-proj-j660.onrender.com/core/user/by-email?email=${loggedInUsername}`,
           {
             method: 'GET',
             headers: {
@@ -72,7 +72,7 @@ const Profile = () => {
 
       try {
         const response = await fetch(
-          `https://back-proj-j660.onrender.com/service-provider/user/${userInfo.id}`, // Endpoint para buscar o prestador pelo ID do usuário
+          `https://back-proj-j660.onrender.com/core/service-provider/user/${userInfo.id}`, // Endpoint para buscar o prestador pelo ID do usuário
           {
             method: 'GET',
             headers: {
@@ -103,7 +103,7 @@ const Profile = () => {
 
       try {
         const response = await fetch(
-          `https://back-proj-j660.onrender.com/service-order/user/${userInfo.id}`,
+          `https://back-proj-j660.onrender.com/core/service-order/user/${userInfo.id}`,
           {
             method: 'GET',
             headers: {
@@ -138,7 +138,7 @@ const Profile = () => {
         if (!serviceProviders[providerId]) {
           try {
             const response = await fetch(
-              `https://back-proj-j660.onrender.com/service-provider/${providerId}`,
+              `https://back-proj-j660.onrender.com/core/service-provider/${providerId}`,
               {
                 method: 'GET',
                 headers: {
@@ -163,7 +163,7 @@ const Profile = () => {
         if (!offeredServices[serviceId]) {
           try {
             const response = await fetch(
-              `https://back-proj-j660.onrender.com/offered-service/${serviceId}`,
+              `https://back-proj-j660.onrender.com/core/offered-service/${serviceId}`,
               {
                 method: 'GET',
                 headers: {
@@ -192,7 +192,7 @@ const Profile = () => {
 
   const handleRatingChange = async (orderId, rating) => {
     try {
-      const response = await fetch(`https://back-proj-j660.onrender.com/service-order/${orderId}/rating`, {
+      const response = await fetch(`https://back-proj-j660.onrender.com/core/service-order/${orderId}/rating`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

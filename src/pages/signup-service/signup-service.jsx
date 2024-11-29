@@ -33,7 +33,7 @@ const SignUpService = () => {
         const loggedInUsername = decoded.sub;
 
         const response = await fetch(
-          `https://back-proj-j660.onrender.com/user/by-email?email=${loggedInUsername}`,
+          `https://back-proj-j660.onrender.com/core/user/by-email?email=${loggedInUsername}`,
           {
             method: 'GET',
             headers: {
@@ -86,7 +86,7 @@ const SignUpService = () => {
     formData.append('imageFile', imageFile);
 
     try {
-      const response = await sendImageBlob('https://back-proj-j660.onrender.com/service-provider', 'POST', formData, token);
+      const response = await sendImageBlob('https://back-proj-j660.onrender.com/core/service-provider', 'POST', formData, token);
 
       if (response) {
         toast.success('Prestador de serviço cadastrado com sucesso!');

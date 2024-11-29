@@ -129,7 +129,7 @@ export default function SearchAppBar({ onSearch }) {
       };
 
       const token = localStorage.getItem('token');
-      const response = await fetch('https://back-proj-j660.onrender.com/offered-service/search', {
+      const response = await fetch('https://back-proj-j660.onrender.com/core/offered-service/search', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
